@@ -1,4 +1,4 @@
-SRC = main.c \
+SRC = 	main.c \
 		push_swap.c \
 		init_piles.c \
 		pile.c \
@@ -12,11 +12,11 @@ SRC = main.c \
 		sort_pile.c \
 		directions.c \
 		move.c \
-		steps.c
+		ft_atoi.c \
+		ft_strdup.c
 SRCS = $(SRC)
 OBJS = $(SRCS:%.c=%.o)
 NAME = push_swap
-INCL = printf/libftprintf.a libft/libft.a
 CC = gcc
 CFLAGS = -Wall -Wextra -Werror
 RM = rm -f
@@ -25,7 +25,7 @@ HEADER = pushswap.h
 all: ${NAME}
 
 ${NAME}:	${OBJS}
-			${CC} ${CFLAGS} -I ${HEADER} ${OBJS} -o ${NAME}	
+			${CC} ${CFLAGS} ${OBJS} 
 	
 clean:
 	${RM} ${OBJS}

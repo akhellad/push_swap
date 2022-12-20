@@ -4,6 +4,7 @@
 # include "printf/ft_printf.h"
 # include "libft/libft.h"
 # include <unistd.h>
+# include <stdlib.h>
 
 # define ASC		0
 # define DESC		1
@@ -89,6 +90,11 @@ size_t	    count_dir(t_dir *dir);
 int		    pick_solution(t_init *init, t_cond *conds);
 int		    realign_and_sort_a(t_init *init);
 int		    resolve(t_init *init);
+int			ft_atoi(const char *str, int *num);
+char        *ft_strdup(const char *src);
+size_t	    ft_strlen(const char *str);
+void	    print_directions(t_dir *dir);
+void	    print_direction(t_dir *dir);
 
 #endif
 

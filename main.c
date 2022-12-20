@@ -11,10 +11,11 @@ int main(int ac, char **av)
     init.dir = NULL;
     if(check_if_ordered(&init.a_pile, ASC) && resolve(&init))
     {
-        free(init.dir);
+        free_direction(init.dir);
         write(STDERR_FILENO, "Error\n", 6);
         return (1);
     }
+    print_direction(init.dir);
 	free_init(&init);
 	return (0); 
 }
