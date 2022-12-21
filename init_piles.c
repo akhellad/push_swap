@@ -1,5 +1,8 @@
 #include "push_swap.h"
 
+/*
+** copie une chaine de caractère jusu'au caractère stop
+*/
 char				*ft_strdup_char(const char *str, char stop)
 {
 	int		i;
@@ -16,6 +19,10 @@ char				*ft_strdup_char(const char *str, char stop)
 	pt[i] = '\0';
 	return (pt);
 }
+
+/*
+** Compte comben il y a de nombres totaux dans les arguments
+*/
 
 size_t  count_pile_size(int ac, char **av)
 {
@@ -39,6 +46,10 @@ size_t  count_pile_size(int ac, char **av)
     }
     return (size);
 }
+
+/*
+** remplis la ligne d'une pile avec un argument
+*/
 
 int     fill_pile_arg(char *argv, t_pile *pile, size_t *pile_nb)
 {
@@ -68,6 +79,10 @@ int     fill_pile_arg(char *argv, t_pile *pile, size_t *pile_nb)
     return (0);
 }
 
+/*
+** remplie la pile a
+*/
+
 int     fill_pile(int ac, char **av, t_pile *pile)
 {
     size_t i;
@@ -86,29 +101,33 @@ int     fill_pile(int ac, char **av, t_pile *pile)
     return (0);
 }
 
-int     init_pile(int ac, char **av, t_pile *a_pile, t_pile *b_pile)
-{
-    size_t pile_size;
+/*
+** Initialise et alloue la taille necessecaire pour la pile a et b avec les arguments passés en paramètre 
+*/
 
-    pile_size = count_pile_size(ac, av);
-    if (!(a_pile->tab = malloc(sizeof(int) * pile_size)))
-        return (write(STDERR_FILENO, "Error\n", 6));
-    if (!(b_pile->tab = malloc(sizeof(int) * pile_size)))
-    {
-        free(a_pile->tab);
+int					init_pile(int argc, char **argv, t_pile *a_pile, t_pile *b_pile)
+{
+	size_t		pile_size;
+
+	pile_size = count_pile_size(argc, argv);
+	if (!(a_pile->tab = malloc(sizeof(int) * pile_size)))
+		return (write(STDERR_FILENO, "Error\n", 6));
+	if (!(b_pile->tab = malloc(sizeof(int) * pile_size)))
+	{
+		free(a_pile->tab);
 		write(STDERR_FILENO, "Error\n", 6);
-        return (1);        
-    }
-    a_pile->max_tab_size = pile_size;
-    b_pile->max_tab_size = pile_size;
-    a_pile->tab_size = 0;
-    b_pile->tab_size = 0;
-    if (fill_pile(ac, av, a_pile))
-    {
-        free(a_pile->tab);
-        free(b_pile->tab);
-        write(STDERR_FILENO, "Error\n", 6);
-        return (1);
-    }
-    return (0);
+		return (1);
+	}
+	a_pile->max_tab_size = pile_size;
+	b_pile->max_tab_size = pile_size;
+	a_pile->tab_size = 0;
+	b_pile->tab_size = 0;
+	if (fill_pile(argc, argv, a_pile))
+	{
+		free(a_pile->tab);
+		free(b_pile->tab);
+		write(STDERR_FILENO, "Error\n", 6);
+		return (1);
+	}
+	return (0);
 }

@@ -25,7 +25,7 @@ HEADER = pushswap.h
 all: ${NAME}
 
 ${NAME}:	${OBJS}
-			${CC} ${CFLAGS} ${OBJS} 
+			${CC} ${CFLAGS} ${OBJS} -g3 -fsanitize=address
 	
 clean:
 	${RM} ${OBJS}

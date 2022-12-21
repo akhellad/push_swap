@@ -1,8 +1,6 @@
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
-# include "printf/ft_printf.h"
-# include "libft/libft.h"
 # include <unistd.h>
 # include <stdlib.h>
 
@@ -30,6 +28,7 @@ typedef struct s_init
     t_pile   a_pile;
     t_pile   b_pile;
     t_dir  *dir;
+    int     debug;
 }           t_init;
 
 typedef struct s_cond
@@ -93,8 +92,8 @@ int		    resolve(t_init *init);
 int			ft_atoi(const char *str, int *num);
 char        *ft_strdup(const char *src);
 size_t	    ft_strlen(const char *str);
-void	    print_directions(t_dir *dir);
-void	    print_direction(t_dir *dir);
+void	    print_dirs(t_dir *dir);
+void	    print_dir(t_dir *dir);
 
 #endif
 

@@ -84,17 +84,17 @@ init->a_pile.max_tab_size)))
 	return (0);
 }
 
-void	print_direction(t_dir *dir)
+void	print_dir(t_dir *dir)
 {
 	write(STDOUT_FILENO, dir->line, ft_strlen(dir->line));
 	write(STDOUT_FILENO, "\n", 1);
 }
 
-void	print_directions(t_dir *dir)
+void	print_dirs(t_dir *dir)
 {
-	while(dir)
+	while (dir)
 	{
-		print_direction(dir);
+		print_dir(dir);
 		dir = dir->next;
 	}
 }

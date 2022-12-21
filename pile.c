@@ -1,5 +1,9 @@
 #include "push_swap.h"
 
+/*
+** Regarde la pile a possède le nombre donné 
+*/
+
 int check_double(t_pile *pile, int nbr)
 {
     size_t i;
@@ -14,6 +18,10 @@ int check_double(t_pile *pile, int nbr)
     return (0);
 }
 
+/*
+** Regarde si la pile a est triée dans l'ordre croissant ou decroissant
+*/
+
 int     check_if_ordered(t_pile *pile, int order)
 {
     size_t i;
@@ -23,31 +31,39 @@ int     check_if_ordered(t_pile *pile, int order)
 	{
 		if ((order == ASC && pile->tab[i] >= pile->tab[i + 1])
 			|| (order == DESC && pile->tab[i] <= pile->tab[i + 1]))
-			return (0);
+			return (1);
 		i++;
 	}
-	return (1);
+	return (0);
 }
 
-t_pile   *pile_copy(t_pile *pile)
+/*
+** Copie une pile 
+*/
+
+t_pile			*pile_copy(t_pile *pile)
 {
-    size_t  i;
-    t_pile   *new_pile;
+	size_t		i;
+	t_pile		*new;
 
-    if(!(new_pile = malloc(sizeof(t_pile))))
-        return (NULL);
-    if(!(pile->tab = malloc(sizeof(int) * pile->max_tab_size)))
-        return (NULL);
-    i = 0;
-    while (i < pile->tab_size)
-    {
-        new_pile->tab[i] = pile->tab[i];
-        i ++;
-    }
-    new_pile->tab_size = pile->tab_size;
-    new_pile->max_tab_size = pile->max_tab_size;
-    return (new_pile);
+	if (!(new = malloc(sizeof(t_pile))))
+		return (NULL);
+	if (!(new->tab = malloc(sizeof(int) * pile->max_tab_size)))
+		return (NULL);
+	i = 0;
+	while (i < pile->tab_size)
+	{
+		new->tab[i] = pile->tab[i];
+		i++;
+	}
+	new->tab_size = pile->tab_size;
+	new->max_tab_size = pile->max_tab_size;
+	return (new);
 }
+
+/*
+** Crée une pile vide d'une taille donnée 
+*/
 
 t_pile   *new_empty_pile(size_t max_size)
 {
