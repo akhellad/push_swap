@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
+#include "/home/akhellad/Documents/push_swap/includes/push_swap.h"
 
 int				ft_atoi(const char *str, int *num)
 {

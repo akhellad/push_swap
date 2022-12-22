@@ -1,4 +1,4 @@
-#include "./includes/push_swap.h"
+#include "/home/akhellad/Documents/push_swap/includes/push_swap.h"
 
 void			calcul_sort_a(size_t *pos, size_t *mvt, t_pile *a_pile, t_pile *b_pile)
 {

@@ -1,4 +1,4 @@
-#include "./includes/push_swap.h"
+#include "/home/akhellad/Documents/push_swap/includes/push_swap.h"
 
 /*
 ** Regarde la pile a possède le nombre donné 

@@ -1,4 +1,4 @@
-#include "./includes/push_swap.h"
+#include "/home/akhellad/Documents/push_swap/includes/push_swap.h"
 
 size_t			count_dir(t_dir *dir)
 {

@@ -1,4 +1,4 @@
-#include "./includes/push_swap.h"
+#include "/home/akhellad/Documents/push_swap/includes/push_swap.h"
 
 int				reverse_rotate_bruteforce_a(t_cond **new_conds, t_cond *tmp, size_t pos[2], t_pile *p_pile)
 {

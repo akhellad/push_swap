@@ -1,6 +1,18 @@
 
 # VARIABLES #
 
+HEAD_DIR =	/home/akhellad/Documents/push_swap/includes/
+
+SRC_DIR	=	/home/akhellad/Documents/push_swap/src/
+
+OBJ_DIR	=	/home/akhellad/Documents/push_swap/compilated_src/
+
+RM = rm -rf
+
+CC = gcc
+
+CFLAGS = -Wall -Wextra -Werror
+
 # FICHIERS A COMPILER #
 
 SRC = 	main.c \
@@ -22,43 +34,40 @@ SRC = 	main.c \
 
 SRCS		=	$(SRC)
 
-# COMPILED_SOURCES #
+# COMPILER LES SOURCES #
 
-OBJS 		=	$(SRCS:%.c=$(DIR_OBJS)%.o)
+OBJS 		=	$(SRCS:%.c=$(OBJ_DIR)%.o)
 
 NAME 		=	push_swap
 
-
-# **************************************************************************** #
-
-## RULES ##
+## REGLES ##
 
 all:			$(NAME)
 
-debug:			CC_FLAGS += -g3 -fsanitize=address
+debug:			CFLAGS += -g3 -fsanitize=address
 debug:			all
 
-# VARIABLES RULES #
+# REGLES DES VARIABLES #
 
 $(NAME):		$(OBJS)
-				$(CC) $(CC_FLAGS) -I $(DIR_HEADERS) $(OBJS) -o $(NAME)
+				$(CC) $(CFLAGS) -I $(HEAD_DIR) $(OBJS) -o $(NAME)
 
-# COMPILED_SOURCES RULES #
+# REGLES POUR LES FICHIERS COMPILÉS #
 
-$(OBJS):		| $(DIR_OBJS)
-
-
-$(DIR_OBJS)%.o: $(DIR_SRCS)%.c
-				$(CC) $(CC_FLAGS) -I $(DIR_HEADERS) -c $< -o $@
-
-$(DIR_OBJS):
-				mkdir $(DIR_OBJS)
+$(OBJS):		| $(OBJ_DIR)
 
 
-# OBLIGATORY PART #
+$(OBJ_DIR)%.o: $(SRC_DIR)%.c
+				$(CC) $(CFLAGS) -c $< -o $@
+
+$(OBJ_DIR):
+				mkdir $(OBJ_DIR)
+
+
+# SUPPRIMER LES FICHIER ET RECOMPILER #
 
 clean:
-				$(RM) $(DIR_OBJS)
+				$(RM) $(OBJ_DIR)
 
 fclean:			clean
 				$(RM) $(NAME)

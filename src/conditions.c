@@ -1,4 +1,4 @@
-#include "./includes/push_swap.h"
+#include "/home/akhellad/Documents/push_swap/includes/push_swap.h"
 
 t_cond   *new_empty_condition(t_pile *a_pile, t_pile *b_pile, size_t maxsize)
 {

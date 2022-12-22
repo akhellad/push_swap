@@ -1,4 +1,4 @@
-#include "./includes/push_swap.h"
+#include "/home/akhellad/Documents/push_swap/includes/push_swap.h"
 
 void			execute_dirs(t_dir *instr, t_pile *stack_a, t_pile *stack_b)
 {

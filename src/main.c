@@ -1,9 +1,8 @@
-#include "./includes/push_swap.h"
+#include "/home/akhellad/Documents/push_swap/includes/push_swap.h"
 
 int		main(int argc, char *argv[])
 {
 	t_init			init;
-    int             i = 0;
 
 	if (--argc < 1 && argc == 1)
 		return (0);
