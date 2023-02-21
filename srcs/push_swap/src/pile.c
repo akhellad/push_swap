@@ -6,7 +6,7 @@
 /*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 17:43:07 by akhellad          #+#    #+#             */
-/*   Updated: 2023/02/16 17:46:44 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/02/21 16:50:30 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ int	check_double(t_pile *pile, int nbr)
 /*
 ** Regarde si la pile a est triée dans l'ordre croissant ou decroissant
 */
+#include <stdio.h>
 
 int	check_if_ordered(t_pile *pile, int order)
 {

@@ -6,7 +6,7 @@
 /*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:56:24 by akhellad          #+#    #+#             */
-/*   Updated: 2023/02/17 15:56:44 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:24:42 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	main(int argc, char *argv[])
 {
 	t_init			init;
 
-	if (--argc < 1 && argc == 1)
+	if (--argc < 1)
 		return (0);
 	if (init_pile(argc, &argv[1], &init.a_pile, &init.b_pile))
 		return (1);

@@ -6,7 +6,7 @@
 /*   By: akhellad <akhellad@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/17 15:56:53 by akhellad          #+#    #+#             */
-/*   Updated: 2023/02/17 18:02:34 by akhellad         ###   ########.fr       */
+/*   Updated: 2023/02/21 17:03:32 by akhellad         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,7 +71,7 @@ int	fill_pile_arg(char *argv, t_pile *pile, size_t *pile_nb)
 			return (1);
 		}
 		free(str);
-		if (check_double(pile, nbr))
+		if (pile_contains(pile, nbr))
 			return (1);
 		pile->tab[(*pile_nb)++] = nbr;
 		pile->tab_size++;
@@ -114,8 +114,6 @@ int	init_pile(int argc, char **argv, t_pile *a_pile, t_pile *b_pile)
 		write(STDERR_FILENO, "Error\n", 6);
 		return (1);
 	}
-	a_pile->max_tab_size = pile_size;
-	b_pile->max_tab_size = pile_size;
 	a_pile->tab_size = 0;
 	b_pile->tab_size = 0;
 	if (fill_pile(argc, argv, a_pile))
