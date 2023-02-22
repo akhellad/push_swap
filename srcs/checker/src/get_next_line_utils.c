@@ -44,14 +44,14 @@ void	ft_bzero(void *str, size_t n)
 	}
 }
 
-void	*ft_calloc(size_t nmemb, size_t size)
+void	*ft_calloc(size_t count, size_t size)
 {
-	void	*ptr;
+	void *ptr;
 
-	ptr = malloc(size * nmemb);
-	if (!ptr)
+	ptr = malloc(count * size);
+	if (ptr == NULL)
 		return (ptr);
-	ft_bzero (ptr, size * nmemb);
+	ft_bzero(ptr, size * count);
 	return (ptr);
 }
 

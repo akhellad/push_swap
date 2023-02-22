@@ -40,6 +40,8 @@ OBJS 		=	$(SRCS:%.c=$(OBJ_DIR)%.o)
 
 NAME 		=	push_swap
 
+HEADER		=	includes/push_swap.h
+
 ## REGLES ##
 
 all:			$(NAME)
@@ -49,7 +51,7 @@ debug:			all
 
 # REGLES DES VARIABLES #
 
-$(NAME):		$(OBJS)
+$(NAME):		$(OBJS) $(HEADER)
 				$(CC) $(CFLAGS) -I $(HEAD_DIR) $(OBJS) -o $(NAME)
 
 # REGLES POUR LES FICHIERS COMPILÉS #

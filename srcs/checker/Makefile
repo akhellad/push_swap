@@ -20,13 +20,15 @@ SRC 		= 	checker.c \
 				get_next_line_utils.c \
 				operations.c \
 				ft_strdup.c \
-				ft_atoi.c
+				ft_atoi.c \
 
 SRCS		=	$(SRC)
 
 OBJS 		=	$(SRCS:%.c=$(OBJ_DIR)%.o)
 
 NAME 		=	checker
+
+HEADER		= 	includes/checker.h
 
 ## REGLES ##
 
@@ -37,7 +39,7 @@ debug:			all
 
 # REGLES DES VARIABLES #
 
-$(NAME):		$(OBJS)
+$(NAME):		$(OBJS) $(HEADER)
 				$(CC) $(CFLAGS) -I $(HEAD_DIR) $(OBJS) -o $(NAME)
 
 # REGLES POUR LES FICHIERS COMPILÉS #

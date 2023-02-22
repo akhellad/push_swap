@@ -31,9 +31,10 @@ void	free_pile(t_pile *pile)
 	free(pile);
 }
 
-void	free_init(t_init *init)
+int	free_init(t_init *init)
 {
 	free_direction(init->dir);
 	free(init->a_pile.tab);
 	free(init->b_pile.tab);
+	return (0);
 }

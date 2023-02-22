@@ -49,7 +49,7 @@ typedef struct s_cond
 }			t_cond;
 
 int	    init_pile(int argc, char **argv, t_pile *a_pile, t_pile *b_pile);
-void	free_init(t_init *init);
+int		free_init(t_init *init);
 void	execute_dirs(t_dir *instr, t_pile *stack_a, t_pile *stack_b);
 int		add_dir(t_dir **dirs, char *line);
 int	    ft_strcmp(const char *s1, const char *s2);

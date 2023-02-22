@@ -61,14 +61,21 @@ ft_strcmp(line, "ss\n") && ft_strcmp(line, "pa\n") && ft_strcmp(line, "pb\n") &&
 ft_strcmp(line, "ra\n") && ft_strcmp(line, "rb\n") && ft_strcmp(line, "rr\n") && \
 ft_strcmp(line, "rra\n") && ft_strcmp(line, "rrb\n") && ft_strcmp(line, "rrr\n"))
         {
+            free (line);
+            free_init(init);
             write(1, "Error\n", 6);
 		    return (-1);
         }
         if (add_dir(&init->dir, line))
+        {
+            free(line);
+            free_init(init);
             return (-1);
+        }
         free (line);
         line = get_next_line(STDIN_FILENO);
     }
+    free (line);
     return (0);
 }
 
@@ -87,6 +94,5 @@ int main(int ac, char **av)
         write(1, "KO\n", 3);
     else
         write(1, "OK\n", 3);
-    free_init(&init);
-    return (0);
+    return (free_init(&init));
 }
